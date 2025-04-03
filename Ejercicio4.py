@@ -5,10 +5,23 @@ Este ejercicio permite modelar situaciones reales de gestion de ventas y refuerz
 
 class Producto:
     
-    def __init__(self, codigo, nombre, precio):
-        self.codigo = codigo
-        self.nombre = nombre
-        self.precio = precio
+    def __init__(self, codigo, nombre, precio, stock):
+        self._codigo = codigo
+        self._nombre = nombre
+        self._precio = precio
+        self._stock = stock
+
+    def get_codigo(self):
+        return self._codigo
+
+    def get_nombre(self):
+        return self._nombre
+
+    def get_precio(self):
+        return self._precio
+
+    def get_stock(self):
+        return self._stock
 
     def __repr__(self):
         return f"Producto (codigo = {self.codigo}, nombre {self.nombre}, precio {self.precio})"
