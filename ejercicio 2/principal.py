@@ -7,11 +7,11 @@ responsabilidades, fomentando la modularidad y la reutilización del código.'''
 from ordenamiento import bubble_sort
 
 def main():
-    numeros = [64, 34, 25, 12, 22, 11, 90]
-    print("Lista original: ", numeros)
-    
-    ordenada = bubble_sort(numeros)
-    print("Lista ordenada: ", ordenada)
+    entrada = input("\nIngrese números separados por comas: ")
+    num = list(map(int, entrada.split(',')))
+    print("\nLista de números ingresados: ", num)
+    orden = bubble_sort(num)
+    print("\nLista ordenada: ", orden)
 
 if __name__ == "__main__":
     main()
