@@ -12,10 +12,39 @@ def main():
     print("\n--Registro de Clientes--")
     id = int(input("\nIngrese el ID del cliente: "))
     nombre = input("\nIngrese el nombre del cliente: ")
-    contacto = input("Ingrese el contacto del cliente: ")
-    tipo_cliente = input("El cliente es VIP o no?: ")
+    contacto = input("\nIngrese el contacto del cliente: ")
+    tipo_cliente = input("\nEl cliente es VIP o no?: ")
     
     if tipo_cliente == 'si' or tipo_cliente == 'sí':
         cliente = ClienteVIP(id, nombre, contacto)
     else:
         cliente = Cliente(id, nombre, contacto)
+        
+    print("--Ingreso de Productos--")
+    productos = []
+    while True:
+        nombre_producto = input("\nIngrese el nombre del producto: ")
+        if not nombre_producto:
+            print("\nEl nombre del producto no puede estar vacío.")
+            continue
+        
+        try:
+            precio_producto = float(input("Ingrese el precio del producto($): "))
+            if precio_producto < 0:
+                print("\nEl precio del producto no puede ser negativo.")
+                continue
+            productos.append((nombre_producto, precio_producto))
+        except ValueError:
+            print("\nError: Ingresa un precio válido.")
+            continue
+        
+        seguir = input("¿Desea ingresar otro producto? (sí/no): ")
+        if seguir not in ["si", "sí", "s"]:
+            break
+        
+    pedido = Pedido(cliente, productos)
+    print("\n--Detalles del pedido--")
+    pedido.detalles()
+    
+if __name__ == '__main__':
+    main()
