@@ -15,12 +15,12 @@ def main():
     contacto = input("\nIngrese el contacto del cliente: ")
     tipo_cliente = input("\nEl cliente es VIP o no?: ")
     
-    if tipo_cliente == 'si' or tipo_cliente == 'sí':
+    if tipo_cliente in ["si", "sí", "s"]:
         cliente = ClienteVIP(id, nombre, contacto)
     else:
         cliente = Cliente(id, nombre, contacto)
         
-    print("--Ingreso de Productos--")
+    print("\n--Ingreso de Productos--")
     productos = []
     while True:
         nombre_producto = input("\nIngrese el nombre del producto: ")
@@ -29,7 +29,7 @@ def main():
             continue
         
         try:
-            precio_producto = float(input("Ingrese el precio del producto($): "))
+            precio_producto = float(input("\nIngrese el precio del producto($): "))
             if precio_producto < 0:
                 print("\nEl precio del producto no puede ser negativo.")
                 continue
@@ -38,7 +38,7 @@ def main():
             print("\nError: Ingresa un precio válido.")
             continue
         
-        seguir = input("¿Desea ingresar otro producto? (sí/no): ")
+        seguir = input("\n¿Desea ingresar otro producto? (sí/no): ")
         if seguir not in ["si", "sí", "s"]:
             break
         
