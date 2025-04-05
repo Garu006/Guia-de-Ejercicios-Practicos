@@ -35,3 +35,11 @@ class Inventario:
             return True #devuelve el valor bool true para indicar que es verdadero
         print(f"No se encontro el producto usando el codigo: {codigo}.")
         return False
+
+    def mostrar_productos(self):
+        if not self.productos:
+            print("El inventario esta vacio.")
+        else:
+            print("\n---Inventario---")
+            for producto in self.productos.values():
+                print(producto)

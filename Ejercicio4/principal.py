@@ -15,7 +15,8 @@ def main():
         print("2. Buscar producto")
         print("3. Actualizar producto")
         print("4. Eliminar producto")
-        print("5. Salir")
+        print("5. Mostrar productos")
+        print("6. Salir")
         print("---------------------------------------------")
 
         opcion = input("Seleccione una opcion: ")
@@ -52,8 +53,14 @@ def main():
             codigo = int(input("Ingrese el codigo del producto a eliminar: "))
             if inventario.delete_producto(codigo):
                 print("Producto eliminado.")
+            else:
+                print("Producto no encontrado.")
 
         elif opcion == "5":
+            inventario.mostrar_productos()
+
+
+        elif opcion == "6":
             print("Saliendo del programa.")
             break
 
