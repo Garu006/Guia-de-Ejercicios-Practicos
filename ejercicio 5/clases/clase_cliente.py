@@ -9,3 +9,4 @@ class Cliente:
     
     def tipo(self):
         return "Cliente Regular"
+    

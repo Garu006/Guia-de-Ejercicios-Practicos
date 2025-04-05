@@ -9,3 +9,4 @@ class ClienteVIP(Cliente):
     
     def tipo(self):
         return "Cliente VIP"
+    
