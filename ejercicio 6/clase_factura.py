@@ -40,7 +40,7 @@ class Factura:
             #Formateo de cada producto
             cantidad = str(p['cantidad']).ljust(6) #Alinear el texto a la izquierda a 6 espacios
             nombre = p['nombre'].ljust(20) #Alinear el texto a la izquierda a 20 espacios
-            precio = f"${p['precio']:.2f}".rjust(10) #Alinear el texto a la derecha a 20 espacios
+            precio = f"${p['precio']:.2f}".rjust(10) #Alinear el texto a la derecha a 10 espacios
             print(f"{cantidad}{nombre}{precio}")
         subtotal = sum(p["cantidad"] * p["precio"] for p in self.__productos)
         descuento_aplicado = int(self.__descuento * 100)
